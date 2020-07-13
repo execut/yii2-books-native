@@ -19,7 +19,7 @@
   "require": {
     "php": "^7.4",
     "yiisoft/yii2": "@dev",
-    "kartik-v/yii2-detail-view": "*",
+    "kartik-v/yii2-detail-view": "*"
   },
   "autoload": {
     "psr-4": {
