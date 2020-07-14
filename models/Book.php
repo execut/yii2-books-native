@@ -1,19 +1,15 @@
 <?php
-
-
 namespace execut\crudExample\models;
-
 use yii\data\ActiveDataFilter;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use yii\grid\ActionColumn;
 use yii\helpers\Html;
-
 class Book extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'example_simple';
+        return 'example_books';
     }
 
     public function getQuery() {
@@ -52,19 +48,12 @@ class Book extends ActiveRecord
         return [
             'id' => [
                 'attribute' => 'id',
-                'filter' => true,
             ],
             'name' => [
                 'attribute' => 'name',
-                'filter' => true,
             ],
             'actions' => [
                 'class' => ActionColumn::class,
-//                'urlCreator' => function () {
-//                    return [
-//                        '/test',
-//                    ];
-//                },
                 'buttons' => [
                     'view' => function () {
                         return false;
@@ -83,9 +72,14 @@ class Book extends ActiveRecord
             'name' => [
                 'attribute' => 'name',
             ],
-            'created' => [
-                'attribute' => 'created',
-            ],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => \yii::t('execut/crudExample', 'Id'),
+            'name' => \yii::t('execut/crudExample', 'Name'),
         ];
     }
 }

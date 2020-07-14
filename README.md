@@ -21,20 +21,37 @@ to the ```require``` section of your `composer.json` file.
 
 ## Configuration
 
-Add to your app config:
+Add to your console app config:
 ```php
 return [
-    // ...
-    'modules' => [
-         // ...
+    'bootstrap' => [
          'crudExample' => [
-            'class' => \execut\crudExample\Module::class,
+            'class' => \execut\crudExample\bootstrap\Console::class,
         ],
-         // ...
     ],
-    // ...
+];
+```
+
+Apply module migrations:
+```shell script
+./yii migrate/up --interactive=0
+-> ...migration was applied.
+-> 
+-> Migrated up successfully.
+```
+
+Add to your backend app config:
+```php
+return [
+    'bootstrap' => [
+         'crudExample' => [
+            'class' => \execut\crudExample\bootstrap\Common::class,
+        ],
+    ],
 ];
 ```
 
 ## Usage
-Open books example url in your browser [/crudExample/books/index](http://localhost/crudExample/books/index)
+Open books example url in your browser [/crudExample/books/index](http://localhost/crudExample/books/index).
+
+Authors example here [/crudExample/authors/index](http://localhost/crudExample/authors/index).

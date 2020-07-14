@@ -3,23 +3,24 @@
 
 namespace execut\crudExample\controllers;
 
+
 use execut\crudExample\CRUDController;
-use execut\crudExample\models\Book;
 use yii\db\ActiveRecord;
-use yii\rest\DeleteAction;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-
-class BooksController extends CRUDController
+class AuthorsController extends CRUDController
 {
-    protected $filesAttributes = [];
+    protected $filesAttributes = [
+        'image' => 'imageFile',
+    ];
+
     /**
      * @return string
      */
     protected function getModelClass(): string
     {
-        $modelClass = $this->module->bookModelClass;
+        $modelClass = $this->module->authorModelClass;
         return $modelClass;
     }
 }
