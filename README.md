@@ -25,8 +25,8 @@ Add to your console app config:
 ```php
 return [
     'bootstrap' => [
-         'crudExample' => [
-            'class' => \execut\crudExample\bootstrap\Console::class,
+         'booksNative' => [
+            'class' => \execut\booksNative\bootstrap\Console::class,
         ],
     ],
 ];
@@ -44,14 +44,14 @@ Add to your backend app config:
 ```php
 return [
     'bootstrap' => [
-         'crudExample' => [
-            'class' => \execut\crudExample\bootstrap\Common::class,
+         'booksNative' => [
+            'class' => \execut\booksNative\bootstrap\Common::class,
         ],
     ],
 ];
 ```
 
 ## Usage
-Open books example url in your browser [/crudExample/books/index](http://localhost/crudExample/books/index).
+Open books example url in your browser [/booksNative/books/index](http://localhost/booksNative/books/index).
 
-Authors example here [/crudExample/authors/index](http://localhost/crudExample/authors/index).
+Authors example here [/booksNative/authors/index](http://localhost/booksNative/authors/index).

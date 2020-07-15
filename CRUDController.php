@@ -1,7 +1,7 @@
 <?php
 
 
-namespace execut\crudExample;
+namespace execut\booksNative;
 
 
 use execut\crudFields\example\models\Author;
@@ -61,7 +61,7 @@ abstract class CRUDController extends Controller
             ];
         }
 
-        return $this->render('@vendor/execut/yii2-crud-example/views/crud/index', [
+        return $this->render('@vendor/execut/yii2-books-native/views/crud/index', [
             'model' => $model,
         ]);
     }
@@ -93,7 +93,7 @@ abstract class CRUDController extends Controller
             }
         }
 
-        return $this->render('@vendor/execut/yii2-crud-example/views/crud/update', [
+        return $this->render('@vendor/execut/yii2-books-native/views/crud/update', [
             'message' => $message,
             'model' => $model,
         ]);

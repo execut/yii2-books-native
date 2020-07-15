@@ -1,7 +1,7 @@
 <?php
 
 
-namespace execut\crudExample\models;
+namespace execut\booksNative\models;
 
 use yii\db\ActiveRecord;
 

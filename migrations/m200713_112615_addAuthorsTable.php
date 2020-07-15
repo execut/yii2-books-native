@@ -1,5 +1,5 @@
 <?php
-namespace execut\crudExample\migrations;
+namespace execut\booksNative\migrations;
 
 class m200713_112615_addAuthorsTable extends \yii\db\Migration
 {

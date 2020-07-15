@@ -1,7 +1,7 @@
 <?php
 use kartik\detail\DetailView;
 
-echo \yii\helpers\Html::a(\yii::t('execut/crudExample', 'List'), ['/' . $this->context->uniqueId]) . ' / ' . \yii::t('execut/crudExample', 'Edit') . ' ' . $model->name;
+echo \yii\helpers\Html::a(\yii::t('execut/booksNative', 'List'), ['/' . $this->context->uniqueId]) . ' / ' . \yii::t('execut/booksNative', 'Edit') . ' ' . $model->name;
 
 /**
  * @var \execut\crudFields\example\models\Book $model

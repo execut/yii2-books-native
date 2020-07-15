@@ -1,6 +1,6 @@
 <?php
-namespace execut\crudExample\models;
-use execut\crudExample\models\AuthorVsBook;
+namespace execut\booksNative\models;
+use execut\booksNative\models\AuthorVsBook;
 use Imagine\Image\ImageInterface;
 use Imagine\Image\ManipulatorInterface;
 use kartik\detail\DetailView;
@@ -101,15 +101,15 @@ class Author extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => \yii::t('execut/crudExample', 'Id'),
-            'name' => \yii::t('execut/crudExample', 'First name'),
-            'surname' => \yii::t('execut/crudExample', 'Surname'),
-            'imageFile' => \yii::t('execut/crudExample', 'Image'),
-            'image_name' => \yii::t('execut/crudExample', 'Image Name'),
-            'image_md5' => \yii::t('execut/crudExample', 'Md5 hash'),
-            'image_extension' => \yii::t('execut/crudExample', 'Extension'),
-            'image_mime_type' => \yii::t('execut/crudExample', 'MIME type'),
-            'main_book_id' => \yii::t('execut/crudExample', 'Main Book'),
+            'id' => \yii::t('execut/booksNative', 'Id'),
+            'name' => \yii::t('execut/booksNative', 'First name'),
+            'surname' => \yii::t('execut/booksNative', 'Surname'),
+            'imageFile' => \yii::t('execut/booksNative', 'Image'),
+            'image_name' => \yii::t('execut/booksNative', 'Image Name'),
+            'image_md5' => \yii::t('execut/booksNative', 'Md5 hash'),
+            'image_extension' => \yii::t('execut/booksNative', 'Extension'),
+            'image_mime_type' => \yii::t('execut/booksNative', 'MIME type'),
+            'main_book_id' => \yii::t('execut/booksNative', 'Main Book'),
         ];
     }
 
@@ -136,7 +136,7 @@ class Author extends ActiveRecord
             [
                 'filter' => false,
                 'format' => 'raw',
-                'header' => \yii::t('execut/crudExample', 'Preview'),
+                'header' => \yii::t('execut/booksNative', 'Preview'),
                 'value' => $this->getValueCallback(),
             ],
             [
@@ -156,7 +156,7 @@ class Author extends ActiveRecord
                         'allowClear' => true,
                         'ajax' => [
                             'dataType' => 'json',
-                            'url' => Url::to(['/crudExample/books']),
+                            'url' => Url::to(['/booksNative/books']),
                             'data' =>
                                 new \yii\web\JsExpression('function(params) {
                     return {
@@ -167,7 +167,7 @@ class Author extends ActiveRecord
                         ],
                     ],
                     'options' => [
-                        'placeholder' => \yii::t('execut/crudExample', 'Main Book'),
+                        'placeholder' => \yii::t('execut/booksNative', 'Main Book'),
                     ],
                     'showToggleAll' => false,
                 ]),
@@ -210,7 +210,7 @@ class Author extends ActiveRecord
                 'attribute' => 'image_md5',
             ],
             'preview' => [
-                'label' => \yii::t('execut/crudExample', 'Preview'),
+                'label' => \yii::t('execut/booksNative', 'Preview'),
                 'format' => 'raw',
                 'displayOnly' => true,
                 'value' => function ($form, $widget) {
@@ -231,7 +231,7 @@ class Author extends ActiveRecord
                             'allowClear' => true,
                             'ajax' => [
                                 'dataType' => 'json',
-                                'url' => Url::to(['/crudExample/books']),
+                                'url' => Url::to(['/booksNative/books']),
                                 'data' =>
                                     new \yii\web\JsExpression('function(params) {
                     return {
@@ -360,8 +360,8 @@ class Author extends ActiveRecord
 
     protected function getValueCallback() {
         return function ($row) {
-            return Html::a(Html::img(['/crudExample/authors/image', 'id' => $row->id, 'extension' => strtolower($row->image_extension), 'dataAttribute' => 'image_211']), [
-                '/crudExample/authors/image',
+            return Html::a(Html::img(['/booksNative/authors/image', 'id' => $row->id, 'extension' => strtolower($row->image_extension), 'dataAttribute' => 'image_211']), [
+                '/booksNative/authors/image',
                 'id' => $row->id,
                 'extension' => strtolower($row->image_extension),
             ]);

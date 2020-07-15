@@ -1,5 +1,5 @@
 <?php
-namespace execut\crudExample\migrations;
+namespace execut\booksNative\migrations;
 
 use yii\db\Migration;
 

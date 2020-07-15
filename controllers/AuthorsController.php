@@ -1,10 +1,10 @@
 <?php
 
 
-namespace execut\crudExample\controllers;
+namespace execut\booksNative\controllers;
 
 
-use execut\crudExample\CRUDController;
+use execut\booksNative\CRUDController;
 use yii\db\ActiveRecord;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

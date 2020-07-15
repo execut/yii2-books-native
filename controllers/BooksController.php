@@ -1,10 +1,10 @@
 <?php
 
 
-namespace execut\crudExample\controllers;
+namespace execut\booksNative\controllers;
 
-use execut\crudExample\CRUDController;
-use execut\crudExample\models\Book;
+use execut\booksNative\CRUDController;
+use execut\booksNative\models\Book;
 use yii\db\ActiveRecord;
 use yii\rest\DeleteAction;
 use yii\web\Controller;

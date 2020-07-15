@@ -1,11 +1,11 @@
 <?php
 
 
-namespace execut\crudExample;
+namespace execut\booksNative;
 
 
-use execut\crudExample\models\Book;
-use execut\crudExample\models\Author;
+use execut\booksNative\models\Book;
+use execut\booksNative\models\Author;
 
 class Module extends \yii\base\Module
 {

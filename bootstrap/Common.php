@@ -1,10 +1,10 @@
 <?php
 
 
-namespace execut\crudExample\bootstrap;
+namespace execut\booksNative\bootstrap;
 
 
-use execut\crudExample\Module;
+use execut\books\Module;
 use yii\base\BootstrapInterface;
 use yii\helpers\ArrayHelper;
 use yii\i18n\PhpMessageSource;
@@ -14,7 +14,7 @@ class Common implements BootstrapInterface
     public $moduleConfig = [];
     public function bootstrap($app)
     {
-        $app->setModule('crudExample', ArrayHelper::merge([
+        $app->setModule('booksNative', ArrayHelper::merge([
             'class' => Module::class,
         ], $this->moduleConfig));
         $this->bootstrapI18n($app);
@@ -22,12 +22,12 @@ class Common implements BootstrapInterface
 
     public function bootstrapI18n($app) {
         $i18n = $app->i18n;
-        $i18n->translations['execut/crudExample'] = [
+        $i18n->translations['execut/books'] = [
             'class' => PhpMessageSource::class,
-            'basePath' => '@vendor/execut/yii2-crud-example/messages',
+            'basePath' => '@vendor/execut/yii2-books-native/messages',
             'sourceLanguage' => 'en-US',
             'fileMap' => [
-                'execut/crudExample' => 'crudExample.php',
+                'execut/books' => 'books.php',
             ],
         ];
     }

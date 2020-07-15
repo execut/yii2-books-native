@@ -1,5 +1,5 @@
 <?php
-namespace execut\crudExample\models;
+namespace execut\booksNative\models;
 use yii\data\ActiveDataFilter;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
@@ -78,8 +78,8 @@ class Book extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => \yii::t('execut/crudExample', 'Id'),
-            'name' => \yii::t('execut/crudExample', 'Name'),
+            'id' => \yii::t('execut/booksNative', 'Id'),
+            'name' => \yii::t('execut/booksNative', 'Name'),
         ];
     }
 }

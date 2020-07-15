@@ -1,7 +1,7 @@
 <?php
 
 
-namespace execut\crudExample\bootstrap;
+namespace execut\booksNative\bootstrap;
 
 
 use yii\base\BootstrapInterface;
@@ -30,9 +30,9 @@ class Console implements BootstrapInterface
             $controllerMap['migrate']['migrationNamespaces'] = [];
         }
 
-        $controllerMap['migrate']['migrationNamespaces'][] = 'execut\crudExample\migrations';
+        $controllerMap['migrate']['migrationNamespaces'][] = 'execut\booksNative\migrations';
         $app->setAliases([
-            '@execut/crudExample' => 'vendor/execut/yii2-crud-example',
+            '@execut/booksNative' => 'vendor/execut/yii2-books-native',
         ]);
         $app->controllerMap = $controllerMap;
     }
