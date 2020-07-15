@@ -22,12 +22,12 @@ class Common implements BootstrapInterface
 
     public function bootstrapI18n($app) {
         $i18n = $app->i18n;
-        $i18n->translations['execut/books'] = [
+        $i18n->translations['execut/booksNative'] = [
             'class' => PhpMessageSource::class,
             'basePath' => '@vendor/execut/yii2-books-native/messages',
             'sourceLanguage' => 'en-US',
             'fileMap' => [
-                'execut/books' => 'books.php',
+                'execut/booksNative' => 'booksNative.php',
             ],
         ];
     }
