@@ -1,14 +1,14 @@
 {
-  "name": "execut/yii2-crud-example",
+  "name": "execut/yii2-books-native",
   "description": "Example of simple Yii2 CRUD",
   "keywords": ["yii2 crud example"],
-  "homepage": "https://github.com/execut/yii2-crud-example",
+  "homepage": "https://github.com/execut/yii2-books-native",
   "type": "library",
   "license": "Apache-2.0",
   "support": {
-    "issues": "https://github.com/execut/yii2-crud-example/issues?state=open",
-    "wiki": "https://github.com/execut/yii2-crud-example/wiki",
-    "source": "https://github.com/execut/yii2-crud-example"
+    "issues": "https://github.com/execut/yii2-books-native/issues?state=open",
+    "wiki": "https://github.com/execut/yii2-books-native/wiki",
+    "source": "https://github.com/execut/yii2-books-native"
   },
   "authors": [
     {
