@@ -12,7 +12,7 @@ class Book extends ActiveRecord
         return 'example_books';
     }
 
-    public function getQuery() {
+    protected function getQuery() {
         $query = self::find();
         $query->andFilterWhere([
             'id' => $this->id,

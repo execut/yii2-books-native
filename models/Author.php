@@ -15,6 +15,7 @@ use yii\imagine\BaseImage;
 use yii\imagine\Image as ImagineImage;
 class Author extends ActiveRecord
 {
+    const MODEL_NAME = '{n,plural,=0{Authors} =1{Author} other{Authors}}';
     public $imageFile = null;
     public static function tableName()
     {
