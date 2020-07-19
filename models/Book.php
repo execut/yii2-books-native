@@ -7,6 +7,7 @@ use yii\grid\ActionColumn;
 use yii\helpers\Html;
 class Book extends ActiveRecord
 {
+    const MODEL_NAME = '{n,plural,=0{Books} =1{Book} other{Books}}';
     public static function tableName()
     {
         return 'example_books';
