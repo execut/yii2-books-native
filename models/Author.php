@@ -102,15 +102,15 @@ class Author extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => \yii::t('execut/booksNative', 'Id'),
-            'name' => \yii::t('execut/booksNative', 'First name'),
-            'surname' => \yii::t('execut/booksNative', 'Surname'),
-            'imageFile' => \yii::t('execut/booksNative', 'Image'),
-            'image_name' => \yii::t('execut/booksNative', 'Image Name'),
-            'image_md5' => \yii::t('execut/booksNative', 'Md5 hash'),
-            'image_extension' => \yii::t('execut/booksNative', 'Extension'),
-            'image_mime_type' => \yii::t('execut/booksNative', 'MIME type'),
-            'main_book_id' => \yii::t('execut/booksNative', 'Main Book'),
+            'id' => \yii::t('execut/books', 'Id'),
+            'name' => \yii::t('execut/books', 'First Name'),
+            'surname' => \yii::t('execut/books', 'Surname'),
+            'imageFile' => \yii::t('execut/books', 'Image'),
+            'image_name' => \yii::t('execut/books', 'Image Name'),
+            'image_md5' => \yii::t('execut/books', 'Md5 hash'),
+            'image_extension' => \yii::t('execut/books', 'Extension'),
+            'image_mime_type' => \yii::t('execut/books', 'MIME type'),
+            'main_book_id' => \yii::t('execut/books', 'Main Book'),
         ];
     }
 
@@ -137,7 +137,7 @@ class Author extends ActiveRecord
             [
                 'filter' => false,
                 'format' => 'raw',
-                'header' => \yii::t('execut/booksNative', 'Preview'),
+                'header' => \yii::t('execut/books', 'Preview'),
                 'value' => $this->getValueCallback(),
             ],
             [
@@ -168,7 +168,7 @@ class Author extends ActiveRecord
                         ],
                     ],
                     'options' => [
-                        'placeholder' => \yii::t('execut/booksNative', 'Main Book'),
+                        'placeholder' => \yii::t('execut/books', 'Main Book'),
                     ],
                     'showToggleAll' => false,
                 ]),
@@ -211,7 +211,7 @@ class Author extends ActiveRecord
                 'attribute' => 'image_md5',
             ],
             'preview' => [
-                'label' => \yii::t('execut/booksNative', 'Preview'),
+                'label' => \yii::t('execut/books', 'Preview'),
                 'format' => 'raw',
                 'displayOnly' => true,
                 'value' => function ($form, $widget) {

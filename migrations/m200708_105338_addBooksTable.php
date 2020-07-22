@@ -8,7 +8,11 @@ class m200708_105338_addBooksTable extends Migration
     // Use safeUp/safeDown to run migration code within a transaction
     public function safeUp()
     {
-        $this->createTable('example_books_native', [
+        if ($this->db->getTableSchema('example_books')) {
+            return;
+        }
+
+        $this->createTable('example_books', [
             'id' => $this->primaryKey()->notNull(),
             'name' => $this->string()->notNull(),
         ]);
@@ -16,7 +20,11 @@ class m200708_105338_addBooksTable extends Migration
 
     public function safeDown()
     {
-        $this->dropTable('example_books_native');
+        if (!$this->db->getTableSchema('example_books')) {
+            return;
+        }
+
+        $this->dropTable('example_books');
     }
 }
 

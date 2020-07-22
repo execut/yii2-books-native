@@ -6,7 +6,11 @@ class m200713_112615_addAuthorsTable extends \yii\db\Migration
     // Use safeUp/safeDown to run migration code within a transaction
     public function safeUp()
     {
-        $this->createTable('example_authors_native', [
+        if ($this->db->getTableSchema('example_authors')) {
+            return;
+        }
+
+        $this->createTable('example_authors', [
             'id' => $this->primaryKey(),
             'surname' => $this->string()->notNull(),
             'name' => $this->string()->notNull(),
@@ -36,7 +40,11 @@ class m200713_112615_addAuthorsTable extends \yii\db\Migration
 
     public function safeDown()
     {
-        $this->dropTable('example_authors_vs_books_native');
-        $this->dropTable('example_authors_native');
+        if (!$this->db->getTableSchema('example_authors')) {
+            return;
+        }
+
+        $this->dropTable('example_authors_vs_books');
+        $this->dropTable('example_authors');
     }
 }

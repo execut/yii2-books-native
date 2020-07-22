@@ -4,9 +4,10 @@
 namespace execut\booksNative\bootstrap;
 
 
-use execut\books\Module;
+use execut\booksNative\Module;
 use yii\base\BootstrapInterface;
 use yii\helpers\ArrayHelper;
+use yii\i18n\I18N;
 use yii\i18n\PhpMessageSource;
 
 class Common implements BootstrapInterface
@@ -21,13 +22,16 @@ class Common implements BootstrapInterface
     }
 
     public function bootstrapI18n($app) {
+        /**
+         * @var I18N $i18n
+         */
         $i18n = $app->i18n;
-        $i18n->translations['execut/booksNative'] = [
+        $i18n->translations['execut/books*'] = [
             'class' => PhpMessageSource::class,
             'basePath' => '@vendor/execut/yii2-books-native/messages',
             'sourceLanguage' => 'en-US',
             'fileMap' => [
-                'execut/booksNative' => 'booksNative.php',
+                'execut/books' => 'booksNative.php',
             ],
         ];
     }

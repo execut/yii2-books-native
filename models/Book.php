@@ -79,8 +79,8 @@ class Book extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => \yii::t('execut/booksNative', 'Id'),
-            'name' => \yii::t('execut/booksNative', 'Name'),
+            'id' => \yii::t('execut/books', 'Id'),
+            'name' => \yii::t('execut/books', 'Name'),
         ];
     }
 }
