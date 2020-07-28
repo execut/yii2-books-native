@@ -99,17 +99,6 @@ abstract class CRUDController extends Controller
         ]);
     }
 
-    public function actionImage($id) {
-        $model = $this->getModel($id);
-        if ($model) {
-            $response = \yii::$app->response;
-            $response->format = Response::FORMAT_RAW;
-            $response->headers->set('Content-Type', $model->image_mime_type);
-
-            return stream_get_contents($model->image_211);
-        }
-    }
-
     public function actionDelete()
     {
         $model = $this->getModel(\yii::$app->request->getQueryParam('id'));
