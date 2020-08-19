@@ -15,7 +15,7 @@ The package has the following functionality:
          * View to display the list of records
             * Output of the add new record button
             * Configuring of list column settings
-            * Displaying the list of posts via the [kartik-v/yii2-dynagrid](https://github.com/kartik-v/yii2-dynagrid) widget
+            * Displaying the list of records via the [kartik-v/yii2-dynagrid](https://github.com/kartik-v/yii2-dynagrid) widget
      * Create or edit records
          * Action to create or edit records
              * If this is not a new entry, then searching for the active model
@@ -26,7 +26,7 @@ The package has the following functionality:
              * Model data validation
              * Saving the model
              * Errors output
-         * View to display the edit form
+         * View to display the edit form of  active record
              * Configuring of settings of attributes for the edit form
              * Output of edit form
      * Action to delete records
