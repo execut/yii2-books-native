@@ -61,7 +61,7 @@ abstract class CRUDController extends Controller
             ];
         }
 
-        return $this->render('@vendor/execut/yii2-books-native/views/crud/index', [
+        return $this->render('@vendor/execut/yii2-books-native/src/views/crud/index', [
             'model' => $model,
         ]);
     }
@@ -93,7 +93,7 @@ abstract class CRUDController extends Controller
             }
         }
 
-        return $this->render('@vendor/execut/yii2-books-native/views/crud/update', [
+        return $this->render('@vendor/execut/yii2-books-native/src/views/crud/update', [
             'message' => $message,
             'model' => $model,
         ]);
