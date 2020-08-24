@@ -1,10 +1,12 @@
 <?php
-
-
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\booksNative;
 
-
-use execut\crudFields\example\models\Author;
 use yii\base\Model;
 use yii\db\ActiveRecord;
 use yii\web\Controller;
@@ -12,14 +14,23 @@ use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
 
+/**
+ * Abstract class for CRUDs
+ * @package execut\booksNative
+ */
 abstract class CRUDController extends Controller
 {
+    /**
+     * @var array Files upload attributes names list
+     */
     protected $filesAttributes = [];
+
+    /**
+     * Index action for CRUD list
+     * @return array|string
+     */
     public function actionIndex()
     {
-//        $model = new Author();
-//        var_export($model->getField('mainBook')->getField());
-//        exit;
         $model = $this->getModel();
         $model->setScenario('grid');
         if ($model->load(\yii::$app->request->getQueryParams())) {
@@ -66,7 +77,14 @@ abstract class CRUDController extends Controller
         ]);
     }
 
-    public function actionUpdate($id = null) {
+    /**
+     * Update action
+     * @param string? $id Record primary key
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionUpdate($id = null)
+    {
         if ($id < 0) {
             throw new NotFoundHttpException('Bad id');
         }
@@ -99,14 +117,23 @@ abstract class CRUDController extends Controller
         ]);
     }
 
-    public function actionDelete()
+    /**
+     * Delete record action
+     * @param string? $id Primary key
+     * @return \yii\console\Response|Response
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id = null)
     {
-        $model = $this->getModel(\yii::$app->request->getQueryParam('id'));
+        $model = $this->getModel($id);
         $model->delete();
         return \yii::$app->response->redirect(\Yii::$app->request->referrer);
     }
 
     /**
+     * Find model by primary key or create new instance
+     * @param string? $id Primary key
      * @return ActiveRecord
      */
     protected function getModel($id = null): ActiveRecord
@@ -123,6 +150,7 @@ abstract class CRUDController extends Controller
     }
 
     /**
+     * Returns CRUD model class
      * @return string
      */
     abstract protected function getModelClass();

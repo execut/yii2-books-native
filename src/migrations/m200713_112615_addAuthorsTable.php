@@ -1,9 +1,21 @@
 <?php
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\booksNative\migrations;
 
+/**
+ * Class m200713_112615_addAuthorsTable
+ * @package execut\booksNative
+ */
 class m200713_112615_addAuthorsTable extends \yii\db\Migration
 {
-    // Use safeUp/safeDown to run migration code within a transaction
+    /**
+     * {@inheritDoc}
+     */
     public function safeUp()
     {
         if ($this->db->getTableSchema('example_authors')) {
@@ -38,6 +50,9 @@ class m200713_112615_addAuthorsTable extends \yii\db\Migration
         $this->addForeignKey('example_authors_vs_books_native_example_book_id_fk', 'example_authors_vs_books', 'example_book_id', 'example_books', 'id');
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function safeDown()
     {
         if (!$this->db->getTableSchema('example_authors')) {

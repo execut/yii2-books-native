@@ -1,19 +1,42 @@
 <?php
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\booksNative\models;
-use yii\data\ActiveDataFilter;
+
 use yii\data\ActiveDataProvider;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\grid\ActionColumn;
-use yii\helpers\Html;
+
+/**
+ * Book model for CRUD
+ * @package execut\booksNative
+ */
 class Book extends ActiveRecord
 {
+    /**
+     * Model name for translations
+     */
     const MODEL_NAME = '{n,plural,=0{Books} =1{Book} other{Books}}';
+
+    /**
+     * {@inheritDoc}
+     */
     public static function tableName()
     {
         return 'example_books';
     }
 
-    protected function getQuery() {
+    /**
+     * Returns query for CRUD list
+     * @return ActiveQuery
+     */
+    protected function getQuery()
+    {
         $query = self::find();
         $query->andFilterWhere([
             'id' => $this->id,
@@ -28,7 +51,12 @@ class Book extends ActiveRecord
         return $query;
     }
 
-    public function search() {
+    /**
+     * Returns DataProvider for CRUD list
+     * @return ActiveDataProvider
+     */
+    public function search()
+    {
         $q = $this->getQuery();
         $dataProvider = new ActiveDataProvider([
             'query' => $q,
@@ -37,6 +65,9 @@ class Book extends ActiveRecord
         return $dataProvider;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function rules()
     {
         return [
@@ -45,7 +76,13 @@ class Book extends ActiveRecord
         ];
     }
 
-    public function getGridColumns() {
+    /**
+     * Returns columns config for GridView widget
+     * @return array
+     * @throws \Exception
+     */
+    public function getGridColumns()
+    {
         return [
             'id' => [
                 'attribute' => 'id',
@@ -64,7 +101,12 @@ class Book extends ActiveRecord
         ];
     }
 
-    public function getFormFields() {
+    /**
+     * Returns DetailView form attributes config
+     * @return array
+     */
+    public function getFormFields()
+    {
         return [
             'id' => [
                 'attribute' => 'id',
@@ -76,6 +118,9 @@ class Book extends ActiveRecord
         ];
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function attributeLabels()
     {
         return [

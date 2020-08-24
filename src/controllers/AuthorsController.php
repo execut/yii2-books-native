@@ -1,17 +1,24 @@
 <?php
-
-
+/**
+ * @author Mamaev Yuriy (eXeCUT)
+ * @link https://github.com/execut
+ * @copyright Copyright (c) 2020 Mamaev Yuriy (eXeCUT)
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
 namespace execut\booksNative\controllers;
 
-
 use execut\booksNative\CRUDController;
-use yii\db\ActiveRecord;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
+/**
+ * Authors CRUD controller
+ * @package execut\booksNative
+ */
 class AuthorsController extends CRUDController
 {
+    /**
+     * {@inheritDoc}
+     */
     protected $filesAttributes = [
         'image' => 'imageFile',
     ];
@@ -25,7 +32,13 @@ class AuthorsController extends CRUDController
         return $modelClass;
     }
 
-    public function actionImage($id) {
+    /**
+     * Action for render author image
+     * @param $id
+     * @return false|string
+     */
+    public function actionImage($id)
+    {
         $model = $this->getModel($id);
         if ($model) {
             $response = \yii::$app->response;
@@ -34,5 +47,7 @@ class AuthorsController extends CRUDController
 
             return stream_get_contents($model->image_211);
         }
+
+        return null;
     }
 }

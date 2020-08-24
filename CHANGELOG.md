@@ -1,6 +1,10 @@
 execut/yii2-books-native change log
 ==============================================
 
+0.1.6 2020-08-24
+---
+- Fixed cs
+
 0.1.4 2020-08-24
 ---
 - Fixed bug with module and controller location
