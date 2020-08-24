@@ -26,12 +26,12 @@ class Common implements BootstrapInterface
          * @var I18N $i18n
          */
         $i18n = $app->i18n;
-        $i18n->translations['execut/books*'] = [
+        $i18n->translations['execut/booksNative*'] = [
             'class' => PhpMessageSource::class,
-            'basePath' => '@vendor/execut/yii2-books-native/messages',
+            'basePath' => '@vendor/execut/yii2-books-native/src/messages',
             'sourceLanguage' => 'en-US',
             'fileMap' => [
-                'execut/books' => 'booksNative.php',
+                'execut/booksNative' => 'booksNative.php',
             ],
         ];
     }
